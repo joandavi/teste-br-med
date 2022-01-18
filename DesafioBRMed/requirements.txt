@@ -1,0 +1,7 @@
+Django==4.0.1
+djangorestframework==3.13.1
+django-cors-headers==3.11
+psycopg2
+uWSGI==2.0.20
+requests==2.27.1
+workalendar==16.2
