@@ -41,4 +41,22 @@ def getLast5WorkinDays():
             i += 1
             
         today = today - timedelta(days=1)
+
+    return working_days
+
+
+def getWorkinDays(start_date, end_date):
+    cal = Rio()
+    i = 0
+    working_days = []
+    while i < 5:
+        if start_date > end_date:
+            break
+        
+        if cal.is_working_day(end_date):
+            working_days.append(end_date.date())
+            i += 1
+            
+        end_date = end_date - timedelta(days=1)
+        
     return working_days
