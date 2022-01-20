@@ -118,7 +118,7 @@ export class AppComponent implements OnInit{
     };
     this.chartJpy = {
       title: {
-        text: 'Cotaçoes do Yene'
+        text: 'Cotaçoes do iene'
       },
       yAxis: {
         title: {
@@ -131,7 +131,7 @@ export class AppComponent implements OnInit{
       series: [
         {
           type: 'line',
-          name: 'Yene',
+          name: 'iene',
           data: this.jpy
         }
       ],
