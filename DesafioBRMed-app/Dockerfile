@@ -7,12 +7,13 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copy app dependencies.
-COPY package.json package-lock.json /app/DesafioBRMed-app/
+COPY package.json package-lock.json /app/
 
 # Install app dependencies.
 RUN npm install highcharts-angular --save
 RUN npm install highcharts --save
-RUN npm install --prefix DesafioBRMed-app
+RUN npm install --save-dev @angular-devkit/build-angular
+RUN npm install
 
 # Copy app files.
 COPY . /app
@@ -21,7 +22,7 @@ COPY . /app
 ARG configuration=production
 
 # Build app
-RUN npm run build --prefix DesafioBRMed-app -- --output-path=./dist/out --configuration $configuration
+RUN npm run build  -- --output-path=./dist/out --configuration $configuration
 
 
 ### Stage 2: delivery ###
